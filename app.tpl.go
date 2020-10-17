@@ -2,7 +2,9 @@ package main
 
 import (
 	"__anonymous__/__goapp__/internal/bootstrap"
+	"__anonymous__/__goapp__/internal/commands"
 	"__anonymous__/__goapp__/internal/config"
+	"__anonymous__/__goapp__/internal/http"
 )
 
 func main() {
@@ -19,6 +21,9 @@ func main() {
 	// {{end}}
 	// {{if eq .web "y"}}
 	bootstrap.SetupWeb()
+	http.RegisterMiddlewares(bootstrap.App().Server())
+	http.RegisterRoutes(bootstrap.App().Server())
+	bootstrap.App().CLI.AddCommand(commands.ServeCommand)
 	// {{end}}
 	bootstrap.Run()
 }
