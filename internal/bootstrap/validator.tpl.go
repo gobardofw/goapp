@@ -5,7 +5,8 @@ import (
 	"github.com/gobardofw/validator/validations"
 )
 
-func init() {
+// SetupValidator driver
+func SetupValidator() {
 	if v := validator.NewValidator(app.Translator()); v != nil {
 		// {{if eq .locale "fa"}}
 		validations.RegisterExtraValidations(v)

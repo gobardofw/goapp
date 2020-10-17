@@ -4,7 +4,8 @@ import (
 	"github.com/gobardofw/translator"
 )
 
-func init() {
+// SetupTranslator driver
+func SetupTranslator() {
 	// {{if eq .translator "json"}}
 	if t, err := translator.NewJSONTranslator("// {{.locale}}", "./config/strings"); err != nil {
 		_container.Register("--APP-TRANSLATOR", t)

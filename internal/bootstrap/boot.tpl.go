@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/gobardofw/cli"
-	"github.com/gobardofw/config"
 	"github.com/gobardofw/container"
 	"github.com/gobardofw/logger"
 )
@@ -22,28 +21,6 @@ func init() {
 	app = new(AppDriver)
 	app.Container = _container
 	app.CLI = _cli
-
-	// {{if eq .config "env"}}
-	if c, ok := config.NewEnvConfig("./config/config.env"); ok {
-		_container.Register("--APP-CONFIG", c)
-	} else {
-		panic("failed to build config driver")
-	}
-	// {{end}}
-	// {{if eq .config "json"}}
-	if c, ok := config.NewJSONConfig("./config/config.json"); ok {
-		_container.Register("--APP-CONFIG", c)
-	} else {
-		panic("failed to build config driver")
-	}
-	// {{end}}
-	// {{if eq .config "memory"}}
-	if c, ok := config.NewMemoryConfig(nil); ok {
-		_container.Register("--APP-CONFIG", c)
-	} else {
-		panic("failed to build config driver")
-	}
-	// {{end}}
 }
 
 // App get app instance

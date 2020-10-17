@@ -10,7 +10,8 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func init() {
+// SetupWeb driver
+func SetupWeb() {
 	conf := fiber.Config{}
 	conf.DisableStartupMessage = app.Config().Bool("prod", false)
 	conf.ErrorHandler = httput.ErrorLogger(logger.NewLogger(

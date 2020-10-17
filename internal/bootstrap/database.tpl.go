@@ -6,7 +6,8 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-func init() {
+// SetupDatabase driver
+func SetupDatabase() {
 	conf := app.Config()
 	if db, err := database.NewMySQLConnector(
 		conf.String("mysql.host", "127.0.0.1"),

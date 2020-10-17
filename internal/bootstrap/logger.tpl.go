@@ -9,7 +9,8 @@ import (
 	"github.com/gobardofw/logger"
 )
 
-func init() {
+// SetupLogger driver
+func SetupLogger() {
 	writers := make([]io.Writer, 0)
 	writers = append(writers, logger.NewFileLogger("./storage/logs", "// {{.name}}", "2006-01-02", helpers.DateFormatter()))
 	if !app.Config().Bool("prod", false) {

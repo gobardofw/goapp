@@ -2,7 +2,8 @@ package bootstrap
 
 import "github.com/gobardofw/cache"
 
-func init() {
+// SetupCache driver
+func SetupCache() {
 	// {{if eq .cache "redis"}}
 	conf := app.Config()
 	if c := cache.NewRedisCache(

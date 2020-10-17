@@ -5,7 +5,8 @@ import (
 	"github.com/gobardofw/crypto"
 )
 
-func init() {
+// SetupCrypto driver
+func SetupCrypto() {
 	conf := app.Config()
 	if c := crypto.NewCryptography(conf.String("key", "")); c != nil {
 		_container.Register("--APP-CRYPTO", c)
