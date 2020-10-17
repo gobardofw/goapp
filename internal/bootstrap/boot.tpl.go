@@ -6,8 +6,6 @@ import (
 	"runtime/debug"
 	"time"
 
-	appns "__anonymous__/__goapp__/internal/app"
-
 	"github.com/gobardofw/cli"
 	"github.com/gobardofw/config"
 	"github.com/gobardofw/container"
@@ -46,8 +44,6 @@ func init() {
 		panic("failed to build config driver")
 	}
 	// {{end}}
-
-	appns.Configure(app.Config())
 }
 
 // App get app instance

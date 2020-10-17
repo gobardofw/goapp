@@ -1,9 +1,7 @@
 package bootstrap
 
 import (
-	"__anonymous__/__goapp__/internal/commands"
 	"__anonymous__/__goapp__/internal/helpers"
-	"__anonymous__/__goapp__/internal/http"
 
 	"github.com/gobardofw/cache"
 	"github.com/gobardofw/console/maintenance"
@@ -27,10 +25,7 @@ func init() {
 	), helpers.DateFormatter())
 	server := fiber.New(conf)
 	_container.Register("--APP-SERVER", server)
-	http.RegisterMiddlewares(server, app.Cache())
-	http.RegisterRoutes(server)
 
-	_cli.AddCommand(commands.ServeCommand(app.Config(), server))
 	_cli.AddCommand(maintenance.DownCommand(func(driver string) cache.Cache {
 		return app.Cache(driver)
 	}, "--APP-CACHE"))
