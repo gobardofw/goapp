@@ -16,9 +16,9 @@ func main() {
 	bootstrap.SetupValidator()
 	// {{if eq .database "y"}}
 	bootstrap.SetupDatabase()
-	// end
+	// {{end}}
 	// {{if eq .web "y"}}
 	bootstrap.SetupWeb()
-	// end
+	// {{end}}
 	bootstrap.Run()
 }
