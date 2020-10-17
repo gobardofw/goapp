@@ -14,7 +14,7 @@ func SetupDatabase() {
 		conf.String("mysql.username", "root"),
 		conf.String("mysql.password", ""),
 		conf.String("mysql.database", "// {{.name}}"),
-	); err != nil {
+	); err == nil {
 		_container.Register("--APP-DB", db)
 	} else {
 		panic("failed to init database " + err.Error())
