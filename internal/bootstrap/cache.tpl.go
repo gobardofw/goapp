@@ -8,7 +8,7 @@ func SetupCache() {
 	conf := app.Config()
 	if c := cache.NewRedisCache(
 		"// {{.name}}",
-		conf.String("redis.host", "127.0.0.1"),
+		conf.String("redis.host", "localhost:6379"),
 		conf.Int("redis.maxIdle", 50),
 		conf.Int("redis.maxActive", 10000),
 		conf.UInt8("redis.cache_db", 1),
