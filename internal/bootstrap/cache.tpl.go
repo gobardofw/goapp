@@ -12,7 +12,7 @@ func SetupCache() {
 		conf.Int("redis.maxIdle", 50),
 		conf.Int("redis.maxActive", 10000),
 		conf.UInt8("redis.cache_db", 1),
-	); c != nil {
+	); c == nil {
 		_container.Register("--APP-CACHE", c)
 	} else {
 		panic("failed to build cache driver")

@@ -9,7 +9,7 @@
     // {{end}}
     // {{if eq .database "y"}}
     "mysql": {
-        "host": "127.0.0.1",
+        "host": "",
         "username": "root",
         "password": "",
         "database": "// {{.name}}"

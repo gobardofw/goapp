@@ -10,7 +10,7 @@ import (
 func SetupDatabase() {
 	conf := app.Config()
 	if db, err := database.NewMySQLConnector(
-		conf.String("mysql.host", "127.0.0.1"),
+		conf.String("mysql.host", ""),
 		conf.String("mysql.username", "root"),
 		conf.String("mysql.password", ""),
 		conf.String("mysql.database", "// {{.name}}"),

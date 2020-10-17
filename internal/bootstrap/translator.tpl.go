@@ -7,7 +7,7 @@ import (
 // SetupTranslator driver
 func SetupTranslator() {
 	// {{if eq .translator "json"}}
-	if t, err := translator.NewJSONTranslator("// {{.locale}}", "./config/strings"); err != nil {
+	if t, err := translator.NewJSONTranslator("// {{.locale}}", "./config/strings"); err == nil {
 		_container.Register("--APP-TRANSLATOR", t)
 	} else {
 		panic("failed to build translator driver")
