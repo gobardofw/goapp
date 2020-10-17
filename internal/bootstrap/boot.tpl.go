@@ -33,7 +33,7 @@ func init() {
 	}
 	// {{end}}
 	// {{if eq .config "json"}}
-	if c, ok := config.NewEnvConfig("./config/config.json"); ok {
+	if c, ok := config.NewJSONConfig("./config/config.json"); ok {
 		_container.Register("--APP-CONFIG", c)
 	} else {
 		panic("failed to build config driver")
