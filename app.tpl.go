@@ -21,8 +21,7 @@ func main() {
 	// {{end}}
 	// {{if eq .web "y"}}
 	bootstrap.SetupWeb()
-	http.RegisterMiddlewares(bootstrap.App().Server())
-	http.RegisterRoutes(bootstrap.App().Server())
+	http.RegisterRoutes()
 	bootstrap.App().CLI.AddCommand(commands.ServeCommand)
 	// {{end}}
 	bootstrap.Run()
