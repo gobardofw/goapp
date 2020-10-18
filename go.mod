@@ -10,11 +10,12 @@ require (
 	github.com/gobardofw/container v0.0.0-20201004213034-9be5e2b3328b
 	github.com/gobardofw/crypto v0.0.0-20201017154220-a8b9d91bf5f2
 	github.com/gobardofw/database v0.0.0-20201006101427-1310293cbf8d
-	github.com/gobardofw/http v0.0.0-20201016201432-210230c80cf6
+	github.com/gobardofw/http v0.0.0-20201018161749-7eee60537962
 	github.com/gobardofw/logger v0.0.0-20201011100213-574474df544f
 	github.com/gobardofw/translator v0.0.0-20201017085305-52bb1e95c621
 	github.com/gobardofw/validator v0.0.0-20201007153311-687b9fc0434f
 	github.com/gofiber/fiber/v2 v2.1.0
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/spf13/cobra v1.1.0
+	golang.org/x/sys v0.0.0-20201018121011-98379d014ca7 // indirect
 )
