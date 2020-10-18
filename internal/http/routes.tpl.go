@@ -14,6 +14,8 @@ import (
 // RegisterRoutes register web routes
 func RegisterRoutes() {
 	app := bootstrap.App().Server()
+	app.Static("/", "./static")
+
 	// middlewares
 	app.Use(recover.New())
 	app.Use(middlewares.AccessLogger(createAccessLogger()))
@@ -21,7 +23,6 @@ func RegisterRoutes() {
 	app.Use(middlewares.RateLimiter("GLOBAL-LIMITER", 60, 1*time.Minute, bootstrap.App().Cache()))
 
 	// Routes
-	app.Static("/", "./static")
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Welcome to bardo app")
 	})
