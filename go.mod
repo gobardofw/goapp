@@ -16,6 +16,6 @@ require (
 	github.com/gobardofw/validator v0.0.0-20201007153311-687b9fc0434f
 	github.com/gofiber/fiber/v2 v2.1.0
 	github.com/jmoiron/sqlx v1.2.0
-	github.com/spf13/cobra v1.1.0
-	golang.org/x/sys v0.0.0-20201018121011-98379d014ca7 // indirect
+	github.com/spf13/cobra v1.1.1
+	golang.org/x/sys v0.0.0-20201018230417-eeed37f84f13 // indirect
 )
