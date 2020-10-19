@@ -35,7 +35,8 @@ func main() {
 	http.RegisterRoutes(bootstrap.App().Server())
 	bootstrap.App().Server().Static("/", "./static")
 	bootstrap.App().CLI.AddCommand(commands.ServeCommand)
-	// {{end}} // Run App
+	// {{end}}
+	// Run App
 	bootstrap.Run()
 }
 
