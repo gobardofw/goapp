@@ -36,6 +36,7 @@ func main() {
 	bootstrap.App().Server().Static("/", "./static")
 	bootstrap.App().CLI.AddCommand(commands.ServeCommand)
 	// {{end}}
+
 	// Run App
 	bootstrap.Run()
 }
