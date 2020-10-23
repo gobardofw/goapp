@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"__anonymous__/__goapp__/internal/helpers"
+	"__anonymous__/__goapp__/src/helpers"
 
 	"github.com/gobardofw/cache"
 	"github.com/gobardofw/console/maintenance"

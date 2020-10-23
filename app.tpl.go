@@ -1,11 +1,11 @@
 package main
 
 import (
-	"__anonymous__/__goapp__/internal/bootstrap"
-	"__anonymous__/__goapp__/internal/commands"
-	"__anonymous__/__goapp__/internal/config"
-	"__anonymous__/__goapp__/internal/helpers"
-	"__anonymous__/__goapp__/internal/http"
+	"__anonymous__/__goapp__/src/bootstrap"
+	"__anonymous__/__goapp__/src/commands"
+	"__anonymous__/__goapp__/src/config"
+	"__anonymous__/__goapp__/src/helpers"
+	"__anonymous__/__goapp__/src/http"
 	"io"
 	"os"
 	"time"

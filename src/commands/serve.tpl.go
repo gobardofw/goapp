@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"__anonymous__/__goapp__/internal/bootstrap"
+	"__anonymous__/__goapp__/src/bootstrap"
 
 	"github.com/spf13/cobra"
 )
