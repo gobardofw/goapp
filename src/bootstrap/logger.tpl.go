@@ -12,7 +12,7 @@ import (
 // SetupLogger driver
 func SetupLogger() {
 	writers := make([]io.Writer, 0)
-	writers = append(writers, logger.NewFileLogger("./storage/logs", "// {{.name}}", "2006-01-02", helpers.DateFormatter()))
+	writers = append(writers, logger.NewFileLogger("./logs/log", "// {{.name}}", "2006-01-02", helpers.DateFormatter()))
 	if !app.Config().Bool("prod", false) {
 		writers = append(writers, os.Stdout)
 	}
@@ -22,5 +22,5 @@ func SetupLogger() {
 		panic("failed to build crypto driver")
 	}
 
-	_cli.AddCommand(cstorage.ClearCommand("./storage"))
+	_cli.AddCommand(cstorage.ClearCommand("./logs"))
 }

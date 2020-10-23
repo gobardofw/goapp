@@ -33,7 +33,7 @@ func main() {
 	bootstrap.App().Server().Use(middlewares.Maintenance(bootstrap.App().Cache()))
 	bootstrap.App().Server().Use(middlewares.RateLimiter("GLOBAL-LIMITER", 60, 1*time.Minute, bootstrap.App().Cache()))
 	http.RegisterRoutes(bootstrap.App().Server())
-	bootstrap.App().Server().Static("/", "./static")
+	bootstrap.App().Server().Static("/", "./public")
 	bootstrap.App().CLI.AddCommand(commands.ServeCommand)
 	// {{end}}
 
@@ -43,7 +43,7 @@ func main() {
 
 func createAccessLogger() logger.Logger {
 	writers := make([]io.Writer, 1)
-	writers[0] = logger.NewFileLogger("./storage/access", "// {{.name}}", "2006-01-02", helpers.DateFormatter())
+	writers[0] = logger.NewFileLogger("./logs/access", "// {{.name}}", "2006-01-02", helpers.DateFormatter())
 	if !bootstrap.App().Config().Bool("prod", false) {
 		writers = append(writers, os.Stdout)
 	}

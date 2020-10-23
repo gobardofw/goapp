@@ -36,7 +36,7 @@ func Run() {
 				"2006-01-02 15:04:05",
 				helpers.DateFormatter(),
 				logger.NewFileLogger(
-					"./storage/errors",
+					"./logs/error",
 					"crash",
 					"2006-01-02",
 					helpers.DateFormatter(),
